@@ -121,11 +121,15 @@ Create the PMF using these empirical results (that is, the proportions based on 
 ```python
 import matplotlib.pyplot as plt
 %matplotlib inline
-#
-#
-#
-#
+plt.bar(values, counts/5000, align='center', alpha=0.8)
+plt.xticks(values)
+plt.ylabel('Fraction')
+plt.title('PMF of strikes in a bowling game');
 ```
+
+
+![png](index_files/index_13_0.png)
+
 
 You should see that, with a 25% strike hit rate, even when simulating 5000 times, an almost perfect and/or perfect game of 9 and 10 strikes didn't even occur once! If you change the random seed, however, you'll see that perfect games will show up occasionally. 
 
@@ -133,12 +137,15 @@ Next, let's create the CDF based on these results. You can use `np.cumsum` to ob
 
 
 ```python
-# Your code here
-#
-#
-#
-#
+plt.bar(values, np.cumsum(counts/5000), align='center', alpha=0.8)
+plt.xticks(values)
+plt.ylabel('Fraction')
+plt.title('CDF of strikes in a bowling game');
 ```
+
+
+![png](index_files/index_15_0.png)
+
 
 ## Summary
 
